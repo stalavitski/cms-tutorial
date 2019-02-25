@@ -117,3 +117,6 @@ dmypy.json
 
 # Media uploads
 media/
+
+# Local DB
+project.db
