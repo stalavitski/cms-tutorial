@@ -117,6 +117,7 @@ MIDDLEWARE = (
 
 INSTALLED_APPS = (
     'djangocms_admin_style',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -125,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+
     'cms',
     'menus',
     'sekizai',
@@ -132,23 +134,26 @@ INSTALLED_APPS = (
     'djangocms_text_ckeditor',
     'filer',
     'easy_thumbnails',
+    'mptt',
     'djangocms_column',
     'djangocms_file',
     'djangocms_link',
     'djangocms_picture',
-    'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+
     'mysite',
     'polls_cms_integration',
     'polls',
     'aldryn_apphooks_config',
     'aldryn_boilerplates',
+    'aldryn_bootstrap3',
     'aldryn_categories',
     'aldryn_common',
     'aldryn_newsblog',
     'aldryn_people',
+    'aldryn_style',
     'parler',
     'sortedm2m',
     'taggit',
@@ -186,7 +191,9 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
+    ('sidebar_right.html', 'Sidebar Right'),
+    ('modern_business/home.html', 'Modern Business Home'),
+    ('modern_business/fullwidth.html', 'Modern Business Fullwidth'),
 )
 
 CMS_PERMISSION = True
@@ -223,3 +230,29 @@ STATICFILES_FINDERS = [
      'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
      'django.contrib.staticfiles.finders.AppDirectoriesFinder',
  ]
+
+CKEDITOR_SETTINGS = {
+    'stylesSet': [
+        {
+            'name': 'Page Header H1',
+            'element': 'h1',
+            'attributes': {
+                'class': 'my-4'
+            }
+        },
+        {
+            'name': 'Card Header H4',
+            'element': 'h4',
+            'attributes': {
+                'class': 'card-header'
+            }
+        },
+        {
+            'name': 'Card Text p',
+            'element': 'p',
+            'attributes': {
+                'class': 'card-text'
+            }
+        }
+    ]
+}
